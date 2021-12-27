@@ -2,7 +2,10 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
+  "main": "www/index.js",
   "scripts": {
+    "start": "node www/index.js",
+    "dev": "npx nodemon www/index.ts",
     "build": "yarn clean && yarn compile",
     "compile": "npx tsc --build",
     "clean": "npx tsc --build --clean",
@@ -11,13 +14,18 @@
     "no-lock": "scripts/noPackageLock.sh"
   },
   "dependencies": {
+    "gun": "^0.2020.1235",
+    "http": "^0.0.1-security"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^16.9.1",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.24.2",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
     "typescript": "^4.4.3"
   }
 }
