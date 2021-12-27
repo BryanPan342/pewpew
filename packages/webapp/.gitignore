@@ -33,3 +33,7 @@ yarn-error.log*
 # vercel
 .vercel
 node_modules
+
+# Overrides
+!.eslintrc.js
+!next-env.d.ts
