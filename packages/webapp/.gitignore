@@ -37,3 +37,6 @@ node_modules
 # Overrides
 !.eslintrc.js
 !next-env.d.ts
+
+# Gunjs stuff
+/radata/

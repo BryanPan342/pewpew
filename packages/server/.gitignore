@@ -3,3 +3,6 @@ node_modules
 
 # Save Config Files
 !.eslintrc.js
+
+# Gunjs stuff
+/radata/
