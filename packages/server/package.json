@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "compile": "npx tsc --build",
+    "clean": "npx tsc --build --clean",
+    "clean:all": "git clean -fdx",
+    "lint": "eslint . --ext .ts",
+    "no-lock": "scripts/noPackageLock.sh"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "typescript": "^4.4.3"
+  }
+}
