@@ -1,11 +1,9 @@
 module.exports = {
   env: {
-    browser: true,
     es2020: true,
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
   ],
@@ -14,13 +12,12 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 2018,
     sourceType: 'module',
     project: './tsconfig.json',
   },
   plugins: [
     'import',
-    'react',
     '@typescript-eslint',
   ],
   rules: {
@@ -30,8 +27,20 @@ module.exports = {
 
     '@typescript-eslint/no-unused-vars': [
       'error',
-      { argsIgnorePattern: '^_' }
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
     ],
+
+    // Arugements can be typed as any
+    '@typescript-eslint/explicit-module-boundary-types': [
+      'warn',
+      { allowArgumentsExplicitlyTypedAsAny: true },
+    ],
+
+    // Remove default disallowal of any type
+    '@typescript-eslint/no-explicit-any': 'off',
 
     // 2 space indentation
     '@typescript-eslint/indent': [ 'error', 2 ],
@@ -64,7 +73,8 @@ module.exports = {
     'no-duplicate-imports': ['error'],
 
     // Cannot shadow names
-    'no-shadow': ['error'],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
 
     // Required spacing in property declarations (copied from TSLint, defaults are good)
     'key-spacing': ['error'],
@@ -116,7 +126,7 @@ module.exports = {
         'field',
 
         // Constructors
-        'constructor', // = ["public-constructor", "protected-constructor", "private-constructor"]
+        'constructor', // = ['public-constructor', 'protected-constructor', 'private-constructor']
 
         // Methods
         'method',

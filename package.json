@@ -1,30 +1,29 @@
 {
-  "name": "tiny",
-  "version": "0.1.0",
+  "name": "root",
   "private": true,
+  "version": "0.0.0",
+  "description": "A Next.js + Gun.js app",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "npx eslint '**/*.tsx' '**/*.ts' && npx stylelint '**/*.css' '**/*.scss'",
-    "no-lock": "scripts/noPackageLock.sh"
+    "preci": "rm -rf node_modules",
+    "ci": "yarn install --frozen-lockfile",
+    "build": "npx lerna run build",
+    "lint": "npx lerna run lint",
+    "lint:fix": "npx lerna exec -- yarn lint --fix",
+    "no-lock": "npx lerna exec -- yarn no-lock"
   },
-  "dependencies": {
-    "next": "10.0.9",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanPan342/pewpew.git"
+  },
+  "author": "Bryan Pan",
+  "license": "MIT",
+  "homepage": "https://github.com/BryanPan342/pewpew/#readme",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   },
   "devDependencies": {
-    "@types/node": "^14.14.35",
-    "@types/react": "^17.0.3",
-    "@typescript-eslint/eslint-plugin": "^4.19.0",
-    "@typescript-eslint/parser": "^4.19.0",
-    "eslint": "^7.22.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.23.1",
-    "sass": "^1.32.8",
-    "stylelint": "^13.12.0",
-    "stylelint-config-standard": "^21.0.0",
-    "typescript": "^4.2.3"
+    "lerna": "^4.0.0"
   }
 }
