@@ -1305,6 +1305,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/gun@^0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@types/gun/-/gun-0.9.3.tgz#cdc1116e4a43323733a577e7bc330fdf731a7446"
+  integrity sha512-ydC8P4EHbVUqSK4+BhVQW1b4DCksLVKdnLJENJYuiBQDvk2UfA79vTcKxG7hnpyHPas/7yT6pMviMSDp5m7rmg==
+
 "@types/json-schema@^7.0.9":
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
@@ -2821,6 +2826,11 @@ dot-prop@^6.0.1:
   integrity sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==
   dependencies:
     is-obj "^2.0.0"
+
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
 duplexer3@^0.1.4:
   version "0.1.4"
