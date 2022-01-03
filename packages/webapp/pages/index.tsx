@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ClientProvider from '../components/ClientProvider';
 import Layout from '../components/Layout';
 import styles from '../styles/Home.module.scss';
-import { getClient } from '../utils/PPClient';
+import { COLLECTIONS, getClient } from '../utils/PPClient';
 
 export default function Home(): JSX.Element {
   const [txt, setTxt] = useState();
@@ -10,25 +10,26 @@ export default function Home(): JSX.Element {
   useEffect(() => {
     const client = getClient();
     // retrieve text on load
-    client.gun.get('text').once((node) => {
+    client.mount(COLLECTIONS.TEXT, (node) => {
       if(node == undefined) {
-        client.gun.get('text').put({text: 'Write the text here'});
+        client.put(COLLECTIONS.TEXT, {text: 'Write the text here'});
       } else {
         setTxt(node.text);
       }
     });
 
     // whenever the text loads, update state
-    client.gun.get('text').on((node) => {
+    client.open(COLLECTIONS.TEXT).on((node) => {
       setTxt(node.text);
     });
   }, []);
 
   // Update local state and gun.db state
   const updateText = (event) => {
+    const text = event.target.value;
     const client = getClient();
-    client.gun.get('text').put({text: event.target.value});
-    setTxt(event.target.value);
+    client.put(COLLECTIONS.TEXT, {text});
+    setTxt(text);
   };
 
   return (

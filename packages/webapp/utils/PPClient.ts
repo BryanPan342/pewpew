@@ -1,5 +1,6 @@
 import Gun from 'gun';
-import { Gun as TGun} from './Gun';
+import { IGunChainReference } from 'gun/types/chain';
+import { Gun as TGun, TGunCallback} from './Gun';
 
 let client: PPClient | null;
 
@@ -14,6 +15,10 @@ export function getClient(): PPClient {
   return client;
 }
 
+export enum COLLECTIONS {
+  TEXT='text',
+}
+
 export class PPClient {
 
   public readonly gun: TGun;
@@ -22,5 +27,21 @@ export class PPClient {
     this.gun = Gun({
       peers: servers,
     });
+  }
+
+  public open(collection: COLLECTIONS) {
+    return this.gun.get(collection);
+  }
+
+  public mount(collection: COLLECTIONS, cb: TGunCallback) {
+    this.open(collection).once(cb);
+  }
+
+  public listen(collection: COLLECTIONS, cb: TGunCallback) {
+    this.open(collection).on(cb);
+  }
+
+  public put(collection: COLLECTIONS, data: Record<string, any>) {
+    this.open(collection).put(data);
   }
 }
