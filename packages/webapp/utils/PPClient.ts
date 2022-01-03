@@ -1,5 +1,4 @@
 import Gun from 'gun';
-import { IGunChainReference } from 'gun/types/chain';
 import { Gun as TGun, TGunCallback} from './Gun';
 
 let client: PPClient | null;
