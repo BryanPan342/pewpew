@@ -16,6 +16,6 @@ Gun({
   s3: {
     key: process.env.AWS_ACCESS_KEY, // AWS Access Key
     secret: process.env.AWS_SECRET_TOKEN, // AWS Secret Token
-    bucket: process.env.S3_BUCKET // The bucket you want to save into
-  }
+    bucket: process.env.S3_BUCKET, // The bucket you want to save into
+  },
 });
