@@ -15,6 +15,7 @@
     "no-lock": "scripts/noPackageLock.sh"
   },
   "dependencies": {
+    "aws-sdk": "^2.1049.0",
     "gun": "^0.2020.1235",
     "http": "^0.0.1-security"
   },
