@@ -3,7 +3,7 @@ import Gun from 'gun';
 
 const server = http.createServer();
 
-const PORT = process.env.PORT ?? 8000;
+const PORT = process.env.PORT || 8000;
 
 const www = server.listen(PORT, () => {
   // eslint-disable-next-line no-console

@@ -1,9 +1,11 @@
-const { execSync } = require('child_process');
-const path = require('path');
+const { exec } = require('child_process');
 
 async function main() {
-  const repoRoot = path.join(__dirname, '..');
-  execSync('cd packages/server && PORT=80 yarn start');
+  const process = exec('cd packages/server && PORT=80 node www/index.js');
+
+  process.stdout.on('data', function(data) {
+    console.log(data); 
+  });
 }
 
 main().catch(err => {
