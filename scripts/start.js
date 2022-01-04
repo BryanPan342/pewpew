@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 
 async function main() {
-  const process = exec('cd packages/server && PORT=80 node www/index.js');
+  const process = exec('cd packages/server && node www/index.js');
 
   process.stdout.on('data', function(data) {
     console.log(data); 
