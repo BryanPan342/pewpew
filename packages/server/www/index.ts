@@ -5,9 +5,6 @@ const server = http.createServer();
 
 const PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.VCAP_APP_PORT || process.env.PORT || 8765;
 
-// eslint-disable-next-line no-console
-console.log(PORT);
-
 const www = server.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log('Listening at: http://localhost:' + PORT);
