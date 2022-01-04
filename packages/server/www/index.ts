@@ -5,6 +5,7 @@ const server = http.createServer();
 
 const PORT = process.env.PORT || 8000;
 
+// eslint-disable-next-line no-console
 console.log(PORT);
 
 const www = server.listen(PORT, () => {
