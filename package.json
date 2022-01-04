@@ -9,7 +9,8 @@
     "build": "npx lerna run build",
     "lint": "npx lerna run lint",
     "lint:fix": "npx lerna exec -- yarn lint:fix",
-    "no-lock": "npx lerna exec -- yarn no-lock"
+    "no-lock": "npx lerna exec -- yarn no-lock",
+    "start:server": "node scripts/start.js"
   },
   "repository": {
     "type": "git",
